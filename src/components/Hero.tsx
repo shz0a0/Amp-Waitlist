@@ -8,19 +8,16 @@ import messageImage from '../assets/images/message.png';
 import { motion } from 'framer-motion';
 
 export const Hero = () => {
-  // State to manage the email input and feedback messages
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent the default form submission behavior
+    e.preventDefault();
     setLoading(true);
     setMessage("");
 
     try {
-      // Send a POST request to the API route
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -33,10 +30,11 @@ export const Hero = () => {
       if (response.ok) {
         setMessage("Email sent successfully!");
       } else {
-        setMessage(`Error: ${data.message}`); // Error message from the server
+        setMessage(`Error: ${data.message}`);
       }
     } catch (error) {
-      setMessage("An error occurred while sending the email."); // General error message
+      console.error("Error in handleSubmit:", error); // Log the error for debugging
+      setMessage("An error occurred while sending the email.");
     } finally {
       setLoading(false);
     }
@@ -79,16 +77,16 @@ export const Hero = () => {
         <div>
           <div className="flex justify-center mt-8">
             <form
-              onSubmit={handleSubmit} // Attach the handleSubmit function to the form
+              onSubmit={handleSubmit}
               className="mt-10 flex flex-col gap-2.5 max-w-sm mx-auto sm:flex-row"
             >
               <input
                 type="email"
                 placeholder="your@email.com"
-                value={email} // Bind the input value to the email state
-                onChange={(e) => setEmail(e.target.value)} // Update the email state on input change
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 className="h-12 bg-black/20 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] sm:flex-1"
-                required // Make the email input required
+                required
               />
               <button
                 type="submit"
@@ -99,8 +97,7 @@ export const Hero = () => {
               </button>
             </form>
           </div>
-          {message && <p className="text-center mt-4">{message}</p>}{" "}
-          {/* Display success/error message */}{" "}
+          {message && <p className="text-center mt-4">{message}</p>}
         </div>
       </div>
     </div>
