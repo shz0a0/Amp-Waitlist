@@ -1,7 +1,12 @@
-// src/app/api/send-email/route.js
 import nodemailer from "nodemailer";
+import { Request } from "node-fetch"; // Import the Request type
+import dotenv from "dotenv";
 
-export async function POST(request) {
+// Load environment variables from .env file
+dotenv.config();
+
+export async function POST(request: Request) {
+  // Define the type for request
   const { email } = await request.json();
 
   // Create a transporter object using SMTP transport
