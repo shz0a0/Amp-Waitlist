@@ -7,7 +7,7 @@ dotenv.config();
 
 export async function POST(request: Request) {
   // Define the type for request
-  const { email } = await request.json();
+  const { email } = await (request.json() as Promise<{ email: string }>);
 
   // Create a transporter object using SMTP transport
   const transporter = nodemailer.createTransport({
