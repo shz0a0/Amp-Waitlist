@@ -36,7 +36,7 @@ export const CallToAction = () => {
           />
         </motion.div>
         <h2 className="font-bold text-5xl sm:text-6xl tracking-tighter">
-          Join the Waitlist
+          Join Waitlist
         </h2>
         <p className="text-xl text-white/70 mt-5">
           Join the waitlist to get be notified about our launch. 
@@ -50,8 +50,8 @@ export const CallToAction = () => {
             placeholder="your@email.com"
             className="h-12 bg-white/20 rounded-lg px-5 font-medium placeholder:text-[#9CA3AF] sm:flex-1"
           />
-          <button className="bg-white text-black h-12 rounded-lg px-5">
-            Join the waitlist
+          <button className="bg-white text-black h-12 rounded-lg px-5 flex items-center justify-center">
+          <span className="font-bold whitespace-nowrap">Join the waitlist</span>
           </button>
         </form>
       </div>

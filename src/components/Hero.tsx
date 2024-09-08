@@ -92,10 +92,12 @@ export const Hero = () => {
               />
               <button
                 type="submit"
-                className="bg-white text-black h-12 rounded-lg px-5"
+                className="bg-white text-black h-12 rounded-lg px-5 flex items-center justify-center"
                 disabled={loading}
               >
-                {loading ? "Sending..." : "Join the waitlist"}
+                <span className="font-bold whitespace-nowrap">
+                  {loading ? "Sending..." : "Join the waitlist"}
+                </span>
               </button>
             </form>
           </div>

@@ -25,7 +25,7 @@ export async function POST(request: Request) {
       from: process.env.SMTP_SERVER_USERNAME, // Sender address
       to: email, // User's email
       subject: "Welcome to the Waitlist!", // Subject line
-      text: "Thank you for joining the waitlist!", // Plain text body
+      text: "Thank you for joining the waitlist for Amplifier AI, We will contact you soon when we launch the website!", // Plain text body
     };
 
     // Email options for the business (your email)
