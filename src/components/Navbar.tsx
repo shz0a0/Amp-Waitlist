@@ -32,9 +32,6 @@ export const Navbar = () => {
             >
               Email
             </a>
-            <button className="bg-white py-2 px-4 rounded-lg text-black">
-              Join the waitlist
-            </button>
           </nav>
         </div>
       </div>

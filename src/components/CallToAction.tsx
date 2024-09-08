@@ -36,11 +36,10 @@ export const CallToAction = () => {
           />
         </motion.div>
         <h2 className="font-bold text-5xl sm:text-6xl tracking-tighter">
-          Get instant access
+          Join the Waitlist
         </h2>
         <p className="text-xl text-white/70 mt-5">
-          Celebrate the joy of accomplishment with an app designed to track your
-          prograss and motivate your efforts.
+          Join the waitlist to get be notified about our launch. 
         </p>
         <form
           action=""
